@@ -1,0 +1,63 @@
+/*
+Plantilla sencilla para explicar CSS GRID a principiantes
+tema principal: uso grid-template-columns y grid-template-rows
+*/
+
+header,nav,
+main,aside,
+.adicional div,
+footer {
+    border: black 4px solid;
+    background-color: lightblue;
+}
+
+.contenedor-principal {
+    margin: 20px auto;
+    width: 90%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+}
+
+header {
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+main {
+    grid-column: span 2;
+}
+
+aside {
+    grid-column: 3 / 4;
+    grid-row: span 2;
+} 
+
+.adicional {
+    grid-column: span 2;
+}
+
+.adicional div{
+    margin-top: 5px;
+    padding: 5px;
+}
+
+footer {
+    grid-column: 1 / -1;
+}
+
+@media screen and (max-width: 800px) {
+
+    main {
+        grid-column: 1 / -1;
+    }
+
+    aside {
+        grid-column: 1 / -1;
+    }
+
+    .adicional {
+        grid-column: 1 / -1;
+    }
+}

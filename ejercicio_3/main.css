@@ -1,0 +1,122 @@
+/*
+Plantilla sencilla para explicar CSS GRID a principiantes
+tema principal: uso de unidades de medidas em y rem
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16x;
+} /*por defecto 16px*/
+
+header,nav,
+main,aside,
+.adicional div,
+footer {
+    padding: 10px;
+    border: black 4px solid;
+    background-color: lightblue;
+}
+
+.contenedor-principal {
+    margin: 20px auto;
+    width: 90%;
+    display: grid;
+    gap: 10px;
+    grid-template-areas: "header header header"
+                         "main main aside"
+                         "adicional adicional aside"
+                         "footer footer footer";
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area:main;
+}
+
+aside {
+    grid-area:aside;
+} 
+
+.adicional {
+    grid-area:adicional;
+}
+
+.adicional div{
+    margin-top: 5px;
+    padding: 5px;
+}
+
+footer {
+    grid-area:footer;
+}
+
+/*
+rem depende siempre del elemento raíz del documento, en la práctica se suele referir al body.
+em depende del elemento padre.
+*/
+
+h1{
+    font-size: 2em; 
+}
+
+h2 {
+    font-size: 1.5em; 
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+p {
+    font-size: 1em;
+}
+
+/*tablets*/
+@media (max-width: 992px) {
+    .contenedor-principal {
+        grid-template-areas: "header header header"
+                             "main main main"
+                             "aside aside aside"
+                             "adicional adicional adicional"
+                             "footer footer footer";
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
+/*phone horizontal*/
+@media (max-width: 768px) {
+    .contenedor-principal {
+        grid-template-areas: "header header header"
+                             "main main main"
+                             "aside aside aside"
+                             "adicional adicional adicional"
+                             "footer footer footer";
+    }
+
+    body {
+        font-size: 12px;
+    }
+}
+/*phone vertical*/
+@media (max-width: 576px) {
+    .contenedor-principal {
+        grid-template-areas: "header header header"
+                             "main main main"
+                             "aside aside aside"
+                             "adicional adicional adicional"
+                             "footer footer footer";
+    }
+
+    body {
+        font-size: 11px;
+    }
+}
